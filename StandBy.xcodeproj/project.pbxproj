@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F07E1312C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F07E1302C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf */; };
+		6F07E1352C440A6300CEAA44 /* FloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F07E1342C440A6300CEAA44 /* FloatView.swift */; };
 		6FD540AA2C415E9B00A74E13 /* StandByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD540A92C415E9B00A74E13 /* StandByApp.swift */; };
 		6FD540AC2C415E9B00A74E13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD540AB2C415E9B00A74E13 /* ContentView.swift */; };
 		6FD540AE2C415E9B00A74E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD540AD2C415E9B00A74E13 /* Assets.xcassets */; };
@@ -14,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F07E12F2C43FAAF00CEAA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6F07E1302C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
+		6F07E1342C440A6300CEAA44 /* FloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatView.swift; sourceTree = "<group>"; };
 		6FD540A62C415E9B00A74E13 /* StandBy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandBy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD540A92C415E9B00A74E13 /* StandByApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandByApp.swift; sourceTree = "<group>"; };
 		6FD540AB2C415E9B00A74E13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +38,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F07E1322C43FB9900CEAA44 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6F07E1302C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6F07E1332C43FBBC00CEAA44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F07E1342C440A6300CEAA44 /* FloatView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6FD5409D2C415E9B00A74E13 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +73,11 @@
 		6FD540A82C415E9B00A74E13 /* StandBy */ = {
 			isa = PBXGroup;
 			children = (
+				6F07E1322C43FB9900CEAA44 /* Fonts */,
+				6F07E12F2C43FAAF00CEAA44 /* Info.plist */,
 				6FD540A92C415E9B00A74E13 /* StandByApp.swift */,
 				6FD540AB2C415E9B00A74E13 /* ContentView.swift */,
+				6F07E1332C43FBBC00CEAA44 /* Views */,
 				6FD540AD2C415E9B00A74E13 /* Assets.xcassets */,
 				6FD540AF2C415E9B00A74E13 /* StandBy.entitlements */,
 				6FD540B02C415E9B00A74E13 /* Preview Content */,
@@ -129,6 +153,7 @@
 			files = (
 				6FD540B22C415E9B00A74E13 /* Preview Assets.xcassets in Resources */,
 				6FD540AE2C415E9B00A74E13 /* Assets.xcassets in Resources */,
+				6F07E1312C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD540AC2C415E9B00A74E13 /* ContentView.swift in Sources */,
+				6F07E1352C440A6300CEAA44 /* FloatView.swift in Sources */,
 				6FD540AA2C415E9B00A74E13 /* StandByApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,20 +300,24 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StandBy/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mingfu.StandBy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,20 +342,24 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StandBy/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mingfu.StandBy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
