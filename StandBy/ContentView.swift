@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack{
-            Color.gray
+            Color.black
                 .ignoresSafeArea()
-            FloatView()
+             FloatView()
         }
     }
 }

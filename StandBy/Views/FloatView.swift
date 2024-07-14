@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct FloatView: View {
+    #if os(watchOS)
+     var width:CGFloat = 200
+    #elseif os(iOS)
+     var width:CGFloat = UIScreen.main.bounds.width
+    #elseif os(macOS)
+     var width:CGFloat = 200
+    #endif
     private var font_family = "SF Pro Rounded"
     @State private var currentTime = Date()
     @State private var timeArray: [Character] = []
@@ -47,8 +54,10 @@ struct FloatView: View {
                         .padding(.trailing, -70)
                         .zIndex(0)
                 }
-                .font(.custom(font_family, size: 370))
-                .padding(.trailing, 30)
+                .font(.custom(font_family, size: getFontSize()))
+                .padding(.trailing, 70)
+                .contentTransition(.numericText(countsDown: true))
+                .animation(.spring(duration: 1),value: timeArray)
             }
         }.onAppear {
             let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -61,14 +70,30 @@ struct FloatView: View {
     
     func getFormattedTime() -> [Character]  {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "HH:mm" // HH:mm:ss
         let timeString = formatter.string(from: currentTime)
+        
         return Array(timeString)
     }
     
     func colorSetPrefix() -> String  {
         return "Styles/\(style)/\(color)"
     }
+    
+    /*
+     width   font_size
+     667       320
+     932       370
+     1133      450
+     1180      480
+     1210      500
+     1376      570
+     */
+    func getFontSize() -> CGFloat  {
+        return 0.0002653*width*width - 0.2377 * width + 344.1429
+    }
+    
+    
 }
 
 #Preview {

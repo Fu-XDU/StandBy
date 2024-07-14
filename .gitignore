@@ -15,3 +15,10 @@ UserInterfaceState.xcuserstate
 project.xcworkspace/  
 xcuserdata/  
 UserInterface.xcuserstate 
+
+# macOS
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes

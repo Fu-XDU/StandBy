@@ -11,8 +11,12 @@ import SwiftUI
 struct StandByApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .persistentSystemOverlays(.hidden)
+            #if os(macOS)
+            ContentView().frame(minWidth: 720, maxWidth: .infinity, minHeight: 320, maxHeight: .infinity, alignment: .center)
+            #else
+            ContentView().persistentSystemOverlays(.hidden)
+            #endif
+                
         }
     }
 }
