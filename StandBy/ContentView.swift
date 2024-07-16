@@ -33,7 +33,7 @@ struct ContentView: View {
             }.onAppear(perform: {
                 UIScrollView.appearance().clipsToBounds=false
             })
-            .background(Color.gray)
+            .background(Color.black)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
