@@ -7,6 +7,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Rounded-Black.otf</string>
+		<string>SF-Pro-Text-Semibold.otf</string>
 	</array>
 </dict>
 </plist>

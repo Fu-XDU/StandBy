@@ -7,97 +7,63 @@
 
 import SwiftUI
 
-class TimeManager: ObservableObject {
-    @Published var currentTime: Date = Date()
-    @Published var timeArray: [Character] = []
-    var timer: Timer?
-
-    init() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            self.currentTime = Date()
-            self.timeArray = self.getFormattedTime()
-        }
-        RunLoop.current.add(timer!, forMode: .common)
-    }
-
-    func getFormattedTime() -> [Character]  {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm" // HH:mm:ss
-        let timeString = formatter.string(from: currentTime)
-        
-        return Array(timeString)
-    }
-
-    deinit {
-        timer?.invalidate()
-    }
-}
-
 struct FloatView: View {
-    @StateObject private var timeManager = TimeManager()
-    #if os(watchOS)
-     var width:CGFloat = 200
-    #elseif os(iOS)
-     var width:CGFloat = UIScreen.main.bounds.width
-     var height:CGFloat = UIScreen.main.bounds.height
-    #elseif os(macOS)
-     var width:CGFloat = 200
-    #endif
-    private var font_family = "SF Pro Rounded"
-    @State private var currentTime = Date()
-    @State private var timeArray: [Character] = []
+    @ObservedObject var timeManager: TimeManager
+    var width: CGFloat = UIScreen.main.bounds.width
+    var height: CGFloat = UIScreen.main.bounds.height
+
     @State private var style = "Float"
     @State private var color = "Blue"
     var body: some View {
         if !timeManager.timeArray.isEmpty {
-            HStack{
+            HStack {
                 Text("\(String(timeManager.timeArray[0]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/1"))
-                    .animation(.spring(duration: 1), value:timeManager.timeArray[0])
+                    .animation(.spring(duration: 1), value: timeManager.timeArray[0])
                     .rotationEffect(.degrees(-7))
                     .opacity(0.75)
                     .padding(.trailing, -70)
                     .zIndex(3)
                 Text("\(String(timeManager.timeArray[1]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/2"))
-                    .animation(.spring(duration: 1), value:timeManager.timeArray[1])
+                    .animation(.spring(duration: 1), value: timeManager.timeArray[1])
                     .rotationEffect(.degrees(-5))
                     .padding(.trailing, -70)
                     .zIndex(2)
                 Text("\(String(timeManager.timeArray[2]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/colon"))
-                    .animation(.spring(duration: 1), value:timeManager.timeArray[2])
+                    .animation(.spring(duration: 1), value: timeManager.timeArray[2])
                     .padding(.trailing, -70)
                     .offset(CGSize(width: 0.0, height: -20.0))
                     .opacity(0.98)
                     .zIndex(2)
                 Text("\(String(timeManager.timeArray[3]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/1"))
-                    .animation(.spring(duration: 1), value:timeManager.timeArray[3])
+                    .animation(.spring(duration: 1), value: timeManager.timeArray[3])
                     .rotationEffect(.degrees(5))
                     .opacity(0.75)
                     .padding(.trailing, -70)
                     .zIndex(1)
                 Text("\(String(timeManager.timeArray[4]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/2"))
-                    .animation(.spring(duration: 1), value:timeManager.timeArray[4])
+                    .animation(.spring(duration: 1), value: timeManager.timeArray[4])
                     .padding(.trailing, -70)
                     .zIndex(0)
             }
-            .font(.custom(font_family, size: getFontSize()))
+            .font(.custom("SF Pro Rounded", size: getFontSize()))
             .padding(.trailing, 70)
-            .padding(.top,21)
+            .padding(.top, 21)
             .contentTransition(.numericText(countsDown: true))
             .scaleEffect(x: 1.07, y: 1.1)
             .background(Color.black)
             .ignoresSafeArea()
         }
     }
-    
-    func colorSetPrefix() -> String  {
+
+    func colorSetPrefix() -> String {
         return "Styles/\(style)/\(color)"
     }
-    
+
     /*
      width   font_size
      667       320
@@ -107,13 +73,11 @@ struct FloatView: View {
      1210      500
      1376      570
      */
-    func getFontSize() -> CGFloat  {
-        return 0.0002613*width*width - 0.2377 * width + 344.1429
+    func getFontSize() -> CGFloat {
+        return 0.0002613 * width * width - 0.2377 * width + 344.1429
     }
-    
-    
 }
 
 #Preview {
-    FloatView()
+    FloatView(timeManager: TimeManager())
 }
