@@ -24,7 +24,7 @@ struct NumericalView: View {
                         .animation(.spring(duration: 1), value: timeManager.timeArray[0])
                         .scaleEffect(x: x_scale, y: y_scale)
                         .padding(.horizontal, padding)
-                        .frame(minWidth: 100)
+                        .frame(minWidth: 120)
                     Text("\(String(timeManager.timeArray[1]))")
                         .animation(.spring(duration: 1), value: timeManager.timeArray[1])
                         .scaleEffect(x: x_scale, y: y_scale)
