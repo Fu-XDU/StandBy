@@ -9,65 +9,45 @@ import SwiftUI
 
 struct NumericalView: View {
     @ObservedObject var timeManager: TimeManager
-    var width: CGFloat = UIScreen.main.bounds.width
-
-    @State private var style = "Numerical"
+    private let width: CGFloat = UIScreen.main.bounds.width
+    private let style = "Numerical"
+    
     @State private var color = "Blue"
-    let x_scale = CGFloat(0.9)
-    let y_scale = CGFloat(1.7)
-    let padding = CGFloat(-10)
     var body: some View {
         if !timeManager.timeArray.isEmpty {
             HStack {
+                Spacer()
                 HStack {
                     Text("\(String(timeManager.timeArray[0]))")
-                        .animation(.spring(duration: 1), value: timeManager.timeArray[0])
-                        .scaleEffect(x: x_scale, y: y_scale)
-                        .padding(.horizontal, padding)
-                        .frame(minWidth: 120)
+                    Spacer()
                     Text("\(String(timeManager.timeArray[1]))")
-                        .animation(.spring(duration: 1), value: timeManager.timeArray[1])
-                        .scaleEffect(x: x_scale, y: y_scale)
-                        .padding(.horizontal, padding)
-                        .frame(minWidth: 120)
-                    Text("\(String(timeManager.timeArray[2]))")
-                        .animation(.spring(duration: 1), value: timeManager.timeArray[2])
-                        .scaleEffect(x: x_scale, y: y_scale)
-                        .padding(.horizontal, padding)
-                        .frame(minWidth: 40)
-                        .offset(CGSize(width: 0.0, height: -20.0))
+                    Spacer()
+                    Text("\(String(timeManager.timeArray[2]))").offset(CGSize(width: 0.0, height: -45.0))
                     Text("\(String(timeManager.timeArray[3]))")
-                        .animation(.spring(duration: 1), value: timeManager.timeArray[3])
-                        .scaleEffect(x: x_scale, y: y_scale)
-                        .padding(.horizontal, padding)
-                        .frame(minWidth: 120)
+                    Spacer()
                     Text("\(String(timeManager.timeArray[4]))")
-                        .animation(.spring(duration: 1), value: timeManager.timeArray[4])
-                        .scaleEffect(x: x_scale, y: y_scale)
-                        .padding(.horizontal, padding)
-                        .frame(minWidth: 120)
-                }.font(.custom("SF Pro Text Semibold", size: 220))
+                }.animation(.spring(duration: 1), value: timeManager.timeArray)
+                    .font(.custom("AFCamberwell-One", size: getTimeFontSize()))
                     .foregroundColor(Color("Styles/\(style)/\(color)"))
-                    .padding(.leading, 30)
-                    .padding()
+
                 VStack {
                     HStack {
                         Text("\(timeManager.dateArray[2])").foregroundStyle(Color.white)
                         Text("\(timeManager.dateArray[3])").foregroundColor(Color("Styles/\(style)/\(color)"))
-                    }.font(.custom("SF Pro Text Semibold", size: 27))
+                    }.padding(.top, getPaddingTopSize())
+                        .font(.system(size: getDateFontSize()))
                     Spacer()
                 }
-                .padding(.top, 60)
-                .padding(.leading, 10)
-
                 Spacer()
             }
-
-            .padding(.top, 21)
             .contentTransition(.numericText(countsDown: true))
-            .scaleEffect(x: 1.07, y: 1.1)
             .background(Color.black)
             .ignoresSafeArea()
+            .onAppear(
+                perform: {
+                    print("\(width)")
+                }
+            )
         }
     }
 
@@ -75,17 +55,41 @@ struct NumericalView: View {
         return "Styles/\(style)/\(color)"
     }
 
-    /*
-     width   font_size
-     667       320
-     932       370
-     1133      450
-     1180      480
-     1210      500
-     1376      570
-     */
-    func getFontSize() -> CGFloat {
-        return 0.0002613 * width * width - 0.2377 * width + 344.1429
+    func getTimeFontSize() -> CGFloat {
+        let timeSizeDir: [CGFloat: CGFloat] = [
+            852: 380, // iPhone 15 Pro
+            932: 450, // iPhone 15 Pro Max
+            1180: 680, // iPad Air 11-inch
+            1210: 680, // iPad Pro 11-inch
+            1366: 750, // iPad Air 13-inch
+            1376: 750, // iPad Pro 13-inch
+        ]
+        return timeSizeDir[width] ?? 0.0002613 * width * width - 0.2377 * width + 344.1429
+    }
+
+    func getDateFontSize() -> CGFloat {
+        let dateSizeDir: [CGFloat: CGFloat] = [
+            852: 50, // iPhone 15 Pro
+            932: 50, // iPhone 15 Pro Max
+            1180: 70, // iPad Air 11-inch
+            1210: 70, // iPad Pro 11-inch
+            1366: 80, // iPad Air 13-inch
+            1376: 80, // iPad Pro 13-inch
+        ]
+        return dateSizeDir[width] ?? 0.0002613 * width * width - 0.2377 * width + 344.1429
+    }
+
+    func getPaddingTopSize() -> CGFloat {
+        let paddingTopDir: [CGFloat: CGFloat] = [
+            852: 30, // iPhone 15 Pro
+            932: 30, // iPhone 15 Pro Max
+            1180: 120, // iPad Air 11-inch
+            1210: 125, // iPad Pro 11-inch
+            1366: 200, // iPad Air 13-inch
+            1376: 205, // iPad Pro 13-inch
+        ]
+
+        return paddingTopDir[width] ?? 200
     }
 }
 

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		6F07E1312C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F07E1302C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf */; };
 		6F07E1352C440A6300CEAA44 /* FloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F07E1342C440A6300CEAA44 /* FloatView.swift */; };
-		6F664F732C480F3900692FF0 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F664F722C480F3900692FF0 /* SF-Pro-Text-Semibold.otf */; };
 		6F8640C02C457B0B00913FAA /* VTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8640BF2C457B0B00913FAA /* VTabView.swift */; };
+		6F8AB2692C4951E200E602AE /* AFCamberwell-One-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F8AB2682C4951E200E602AE /* AFCamberwell-One-Regular.otf */; };
 		6FD540AA2C415E9B00A74E13 /* StandByApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD540A92C415E9B00A74E13 /* StandByApp.swift */; };
 		6FD540AC2C415E9B00A74E13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD540AB2C415E9B00A74E13 /* ContentView.swift */; };
 		6FD540AE2C415E9B00A74E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD540AD2C415E9B00A74E13 /* Assets.xcassets */; };
@@ -23,8 +23,8 @@
 		6F07E12F2C43FAAF00CEAA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6F07E1302C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
 		6F07E1342C440A6300CEAA44 /* FloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatView.swift; sourceTree = "<group>"; };
-		6F664F722C480F3900692FF0 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		6F8640BF2C457B0B00913FAA /* VTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTabView.swift; sourceTree = "<group>"; };
+		6F8AB2682C4951E200E602AE /* AFCamberwell-One-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AFCamberwell-One-Regular.otf"; sourceTree = "<group>"; };
 		6FD540A62C415E9B00A74E13 /* StandBy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandBy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD540A92C415E9B00A74E13 /* StandByApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandByApp.swift; sourceTree = "<group>"; };
 		6FD540AB2C415E9B00A74E13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		6F07E1322C43FB9900CEAA44 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				6F664F722C480F3900692FF0 /* SF-Pro-Text-Semibold.otf */,
+				6F8AB2682C4951E200E602AE /* AFCamberwell-One-Regular.otf */,
 				6F07E1302C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf */,
 			);
 			path = Fonts;
@@ -171,9 +171,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F664F732C480F3900692FF0 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6FD540B22C415E9B00A74E13 /* Preview Assets.xcassets in Resources */,
 				6FD540AE2C415E9B00A74E13 /* Assets.xcassets in Resources */,
+				6F8AB2692C4951E200E602AE /* AFCamberwell-One-Regular.otf in Resources */,
 				6F07E1312C43FB2100CEAA44 /* SF-Pro-Rounded-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
