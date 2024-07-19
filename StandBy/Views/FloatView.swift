@@ -9,44 +9,48 @@ import SwiftUI
 
 struct FloatView: View {
     @ObservedObject var timeManager: TimeManager
+
     var width: CGFloat = UIScreen.main.bounds.width
     var height: CGFloat = UIScreen.main.bounds.height
 
     @State private var style = "Float"
     @State private var color = "Blue"
+
     var body: some View {
-        if !timeManager.timeArray.isEmpty {
+        let timeArray = timeManager.timeArray
+
+        if !timeArray.isEmpty {
             HStack {
-                Text("\(String(timeManager.timeArray[0]))")
+                Text("\(String(timeArray[0]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/1"))
-                    .animation(.spring(duration: 1), value: timeManager.timeArray[0])
+                    .animation(.spring(duration: 1), value: timeArray[0])
                     .rotationEffect(.degrees(-7))
                     .opacity(0.75)
                     .padding(.trailing, -70)
                     .zIndex(3)
-                Text("\(String(timeManager.timeArray[1]))")
+                Text("\(String(timeArray[1]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/2"))
-                    .animation(.spring(duration: 1), value: timeManager.timeArray[1])
+                    .animation(.spring(duration: 1), value: timeArray[1])
                     .rotationEffect(.degrees(-5))
                     .padding(.trailing, -70)
                     .zIndex(2)
-                Text("\(String(timeManager.timeArray[2]))")
+                Text("\(String(timeArray[2]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/colon"))
-                    .animation(.spring(duration: 1), value: timeManager.timeArray[2])
+                    .animation(.spring(duration: 1), value: timeArray[2])
                     .padding(.trailing, -70)
                     .offset(CGSize(width: 0.0, height: -20.0))
                     .opacity(0.98)
                     .zIndex(2)
-                Text("\(String(timeManager.timeArray[3]))")
+                Text("\(String(timeArray[3]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/1"))
-                    .animation(.spring(duration: 1), value: timeManager.timeArray[3])
+                    .animation(.spring(duration: 1), value: timeArray[3])
                     .rotationEffect(.degrees(5))
                     .opacity(0.75)
                     .padding(.trailing, -70)
                     .zIndex(1)
-                Text("\(String(timeManager.timeArray[4]))")
+                Text("\(String(timeArray[4]))")
                     .foregroundStyle(Color("\(colorSetPrefix())/2"))
-                    .animation(.spring(duration: 1), value: timeManager.timeArray[4])
+                    .animation(.spring(duration: 1), value: timeArray[4])
                     .padding(.trailing, -70)
                     .zIndex(0)
             }

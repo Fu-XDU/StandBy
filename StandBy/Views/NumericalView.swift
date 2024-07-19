@@ -9,45 +9,52 @@ import SwiftUI
 
 struct NumericalView: View {
     @ObservedObject var timeManager: TimeManager
+
     private let width: CGFloat = UIScreen.main.bounds.width
     private let style = "Numerical"
-    
     @State private var color = "Blue"
+
     var body: some View {
-        if !timeManager.timeArray.isEmpty {
+        let timeArray = timeManager.timeArray
+        let dateArray = timeManager.dateArray
+
+        if !timeArray.isEmpty {
             HStack {
                 Spacer()
                 HStack {
-                    Text("\(String(timeManager.timeArray[0]))")
+                    Text("\(String(timeArray[0]))")
                     Spacer()
-                    Text("\(String(timeManager.timeArray[1]))")
+                    Text("\(String(timeArray[1]))")
                     Spacer()
-                    Text("\(String(timeManager.timeArray[2]))").offset(CGSize(width: 0.0, height: -45.0))
-                    Text("\(String(timeManager.timeArray[3]))")
+                    Text("\(String(timeArray[2]))").offset(CGSize(width: 0.0, height: -45.0))
+                    Text("\(String(timeArray[3]))")
                     Spacer()
-                    Text("\(String(timeManager.timeArray[4]))")
-                }.animation(.spring(duration: 1), value: timeManager.timeArray)
+                    Text("\(String(timeArray[4]))")
+                }.animation(.spring(duration: 1), value: timeArray)
                     .font(.custom("AFCamberwell-One", size: getTimeFontSize()))
                     .foregroundColor(Color("Styles/\(style)/\(color)"))
 
-                VStack {
-                    HStack {
-                        Text("\(timeManager.dateArray[2])").foregroundStyle(Color.white)
-                        Text("\(timeManager.dateArray[3])").foregroundColor(Color("Styles/\(style)/\(color)"))
-                    }.padding(.top, getPaddingTopSize())
-                        .font(.system(size: getDateFontSize()))
-                    Spacer()
+                if !dateArray.isEmpty {
+                    VStack {
+                        HStack {
+                            Text("\(dateArray[2])").foregroundStyle(Color.white)
+                            Text("\(dateArray[3])").foregroundColor(Color("Styles/\(style)/\(color)"))
+                        }.padding(.top, getPaddingTopSize())
+                            .font(.system(size: getDateFontSize()))
+                        Spacer()
+                    }
                 }
+
                 Spacer()
             }
             .contentTransition(.numericText(countsDown: true))
             .background(Color.black)
             .ignoresSafeArea()
-            .onAppear(
-                perform: {
-                    print("\(width)")
-                }
-            )
+//            .onAppear(
+//                perform: {
+//                    print("\(width)")
+//                }
+//            )
         }
     }
 

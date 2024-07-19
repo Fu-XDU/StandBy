@@ -9,5 +9,34 @@
 		<string>SF-Pro-Rounded-Black.otf</string>
 		<string>AFCamberwell-One-Regular.otf</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeDate</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Numberical</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Numberical</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>Index</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCloud</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Float</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Float</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>Index</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
