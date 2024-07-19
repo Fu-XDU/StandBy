@@ -28,6 +28,8 @@ struct StandByApp: App {
                 guard let index = shortcutItemToProcess?.userInfo?["Index"] as? Int else {
                     return
                 }
+                
+                shortcutItemToProcess = nil
                 selectedView = index
             }
         }

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var timeManager: TimeManager = TimeManager()
+    @StateObject var timeManager: TimeManager = TimeManager()
     @Binding var selected: Int
 
     var views: [AnyView] {
         [
-            AnyView(NumericalView(timeManager: timeManager)),
-            AnyView(FloatView(timeManager: timeManager)),
+            AnyView(NumericalView()),
+            AnyView(FloatView()),
         ]
     }
 
@@ -29,6 +29,7 @@ struct ContentView: View {
         })
         .background(Color.black)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .environmentObject(timeManager)
     }
 }
 

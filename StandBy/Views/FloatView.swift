@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FloatView: View {
-    @ObservedObject var timeManager: TimeManager
+    @EnvironmentObject var timeManager: TimeManager
 
     var width: CGFloat = UIScreen.main.bounds.width
     var height: CGFloat = UIScreen.main.bounds.height
@@ -83,5 +83,5 @@ struct FloatView: View {
 }
 
 #Preview {
-    FloatView(timeManager: TimeManager())
+    FloatView().environmentObject(TimeManager())
 }

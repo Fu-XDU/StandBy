@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NumericalView: View {
-    @ObservedObject var timeManager: TimeManager
+    @EnvironmentObject var timeManager: TimeManager
 
     private let width: CGFloat = UIScreen.main.bounds.width
     private let style = "Numerical"
@@ -101,5 +101,5 @@ struct NumericalView: View {
 }
 
 #Preview {
-    NumericalView(timeManager: TimeManager())
+    NumericalView().environmentObject(TimeManager())
 }
