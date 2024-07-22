@@ -11,7 +11,7 @@ class TimeManager: ObservableObject {
     let formatter = DateFormatter()
     var currentDate: Date
     @Published var timeArray: [Character] = [] // ["H", "H", ":", "m", "m", ":", "s", "s"]
-    @Published var dateArray: [String] = [] // ["yyyy", "MM", "dd", "dddd"]
+    @Published var dateArray: [String] = [] // ["yyyy", "MM", "dd", "EEE"]
     var timer: Timer?
 
     init() {

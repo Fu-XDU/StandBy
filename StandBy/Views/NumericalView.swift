@@ -50,11 +50,11 @@ struct NumericalView: View {
             .prefersContentTransition()
             .background(Color.black)
             .ignoresSafeArea()
-            .onAppear(
-                perform: {
-                    print("\(width)")
-                }
-            )
+//            .onAppear(
+//                perform: {
+//                    print("\(width)")
+//                }
+//            )
         }
     }
 
