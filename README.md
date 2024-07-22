@@ -14,10 +14,11 @@ Standby
 <p align="center">
 <a href="https://www.apple.com/macos/" title="Go to Apple homepage"><img src="https://img.shields.io/badge/OS-macOS-blue?logo=apple&logoColor=white" alt="OS - macOS"></a>
   </a>
-<a href="https://"><img src="https://img.shields.io/badge/%EF%A3%BF_OS-iOS_16.0%2B-2ea44f" alt=" OS - iOS 16.0+"></a>
+<a href="https://"><img src="https://img.shields.io/badge/%EF%A3%BF_OS-iOS_14.0%2B-2ea44f" alt=" OS - iOS 14.0+"></a>
 <a href="/CONTRIBUTING.md" title="Go to contributions doc"><img src="https://img.shields.io/badge/contributions-welcome-blue" alt="contributions - welcome"></a>
  <a href="#license"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
 </p>
+
 
 ## Screenshot
 

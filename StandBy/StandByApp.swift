@@ -18,11 +18,7 @@ struct StandByApp: App {
 
     var body: some Scene {
         WindowGroup {
-            #if os(macOS)
-                ContentView(selected: $selectedView).frame(minWidth: 720, maxWidth: .infinity, minHeight: 320, maxHeight: .infinity, alignment: .center)
-            #else
-                ContentView(selected: $selectedView).persistentSystemOverlays(.hidden)
-            #endif
+            ContentView(selected: $selectedView).prefersPersistentSystemOverlaysHidden()
         }.onChange(of: phase) { newPhase in
             if newPhase == .active {
                 guard let index = shortcutItemToProcess?.userInfo?["Index"] as? Int else {

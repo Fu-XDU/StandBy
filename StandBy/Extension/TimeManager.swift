@@ -16,7 +16,7 @@ class TimeManager: ObservableObject {
 
     init() {
         currentDate = Date()
-        formatter.dateFormat = "yyyy-MM-dd/HH:mm:ss" // yyyy-MM-dd/HH:mm:ss
+        formatter.dateFormat = "yyyy-MM-dd-EEE/HH:mm:ss" // yyyy-MM-dd-EEE/HH:mm:ss
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.updateDate()
         }
@@ -26,11 +26,10 @@ class TimeManager: ObservableObject {
     func updateDate() {
         currentDate = Date()
         let timeString = formatter.string(from: currentDate)
-        let date = timeString.components(separatedBy: "/")
-        timeArray = Array(date[1])
 
+        let date = timeString.components(separatedBy: "/")
         dateArray = date[0].components(separatedBy: "-")
-        dateArray.append(currentDate.formatted(Date.FormatStyle().weekday(.abbreviated)))
+        timeArray = Array(date[1])
 //        print("\(dateArray) \(timeArray)") // ["2024", "07", "17", "Wed"] ["2", "2", ":", "2", "9", ":", "3", "6"]
     }
 
