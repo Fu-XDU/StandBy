@@ -9,7 +9,7 @@ import UIKit
 
 class SceneDelegate: NSObject, UIWindowSceneDelegate, ObservableObject {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        print("scene")
+        shortcutItemToProcess = connectionOptions.shortcutItem
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
