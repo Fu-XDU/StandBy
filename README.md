@@ -25,3 +25,7 @@ Standby
 | ![Numerical_iPhone_15_Pro_Max](Screenshot/Numerical_iPhone_15_Pro_Max.png) | ![Float_iPhone_15_Pro_Max](Screenshot/Float_iPhone_15_Pro_Max.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![Numerical_iPad_Air_11-inch](Screenshot/Numerical_iPad_Air_11-inch.png) | ![Float_iPad_Air_11-inch](Screenshot/Float_iPad_Air_11-inch.png) |
+
+## See also
+
+[Fu-XDU/StandBy-Web: A minimal Web Clock.](https://github.com/Fu-XDU/StandBy-Web)
